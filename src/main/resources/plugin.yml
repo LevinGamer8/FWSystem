@@ -1,0 +1,9 @@
+name: FWSystem
+version: '${project.version}'
+main: de.megacraft.fwsystem.FWSystem
+api-version: 1.19
+depend:
+  - MegaEssentials
+commands:
+  CB:
+  jobs:
