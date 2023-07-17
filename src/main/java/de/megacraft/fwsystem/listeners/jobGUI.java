@@ -24,8 +24,8 @@ public class jobGUI implements Listener {
                     DataBase.savePlayerJob(p, "Gräber");
                     e.getInventory().close();
                 } else if (e.getCurrentItem().getType() == Material.IRON_AXE && e.getCurrentItem().getItemMeta().hasEnchant(Enchantment.DIG_SPEED)) {
-                    JobUtils.setJob("Baumfäller", p);
-                    DataBase.savePlayerJob(p, "Baumfäller");
+                    JobUtils.setJob("Holzfäller", p);
+                    DataBase.savePlayerJob(p, "Holzfäller");
                     e.getInventory().close();
                 }
             e.setCancelled(true);
