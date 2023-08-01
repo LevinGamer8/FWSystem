@@ -1,7 +1,5 @@
 package de.megacraft.fwsystem.listeners;
 
-import de.megacraft.fwsystem.utils.DataBase;
-import de.megacraft.fwsystem.utils.JobUtils;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -16,17 +14,8 @@ public class jobGUI implements Listener {
         Player p = (Player) e.getWhoClicked();
         if (e.getView().getTitle().equals("§bJobs")) {
                 if (e.getCurrentItem().getType() == Material.IRON_PICKAXE && e.getCurrentItem().getItemMeta().hasEnchant(Enchantment.LOOT_BONUS_BLOCKS)) {
-                    JobUtils.setJob("Miner", p);
-                    DataBase.savePlayerJob(p, "Miner");
-                    e.getInventory().close();
                 } else if (e.getCurrentItem().getType() == Material.IRON_SHOVEL && e.getCurrentItem().getItemMeta().hasEnchant(Enchantment.DURABILITY)) {
-                    JobUtils.setJob("Gräber", p);
-                    DataBase.savePlayerJob(p, "Gräber");
-                    e.getInventory().close();
                 } else if (e.getCurrentItem().getType() == Material.IRON_AXE && e.getCurrentItem().getItemMeta().hasEnchant(Enchantment.DIG_SPEED)) {
-                    JobUtils.setJob("Holzfäller", p);
-                    DataBase.savePlayerJob(p, "Holzfäller");
-                    e.getInventory().close();
                 }
             e.setCancelled(true);
         }
