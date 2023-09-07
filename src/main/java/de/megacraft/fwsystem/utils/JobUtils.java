@@ -42,13 +42,13 @@ public class JobUtils {
 
     private static void addMinerBlocks() {
         minerBlocks = new HashMap<>();
-        minerBlocks.put(Material.STONE, 1);
-        minerBlocks.put(Material.ANDESITE, 1);
-        minerBlocks.put(Material.GRANITE, 1);
-        minerBlocks.put(Material.DIORITE, 1);
-        minerBlocks.put(Material.DEEPSLATE, 1);
-        minerBlocks.put(Material.TUFF, 1);
-        minerBlocks.put(Material.COAL_ORE, 6);
+        minerBlocks.put(Material.STONE, (int) 0.1);
+        minerBlocks.put(Material.ANDESITE, (int) 0.2);
+        minerBlocks.put(Material.GRANITE, (int) 0.2);
+        minerBlocks.put(Material.DIORITE, (int) 0.2);
+        minerBlocks.put(Material.DEEPSLATE, (int) 0.2);
+        minerBlocks.put(Material.TUFF, (int) 0.2);
+        minerBlocks.put(Material.COAL_ORE, 3);
         minerBlocks.put(Material.COPPER_ORE, 6);
         minerBlocks.put(Material.REDSTONE_ORE, 8);
         minerBlocks.put(Material.LAPIS_ORE, 8);
@@ -68,13 +68,13 @@ public class JobUtils {
 
     private static void addGraeberBlocks() {
         graeberBlocks = new HashMap<>();
-        graeberBlocks.put(Material.DIRT, 1);
+        graeberBlocks.put(Material.DIRT, (int) 0.1);
         graeberBlocks.put(Material.DIRT_PATH, 2);
-        graeberBlocks.put(Material.GRASS_BLOCK, 1);
+        graeberBlocks.put(Material.GRASS_BLOCK, (int) 0.1);
         graeberBlocks.put(Material.SAND, 1);
         graeberBlocks.put(Material.RED_SAND, 2);
         graeberBlocks.put(Material.GRAVEL, 1);
-        graeberBlocks.put(Material.CLAY, 2);
+        graeberBlocks.put(Material.CLAY, (int) 1.5);
     }
 
     private static void addHolzfaellerBlocks() {
