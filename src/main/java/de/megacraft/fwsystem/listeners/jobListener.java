@@ -1,22 +1,16 @@
 package de.megacraft.fwsystem.listeners;
 
 import de.megacraft.fwsystem.utils.JobUtils;
-import de.megaessentialsrecode.MegaEssentials;
 import de.megaessentialsrecode.utils.DataBase;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.metadata.MetadataValue;
 import org.bukkit.plugin.Plugin;
-
-import java.util.Map;
 
 public class jobListener implements Listener {
 
@@ -35,24 +29,20 @@ public class jobListener implements Listener {
         Player player = event.getPlayer();
         Block brokenBlock = event.getBlock();
         if (!(isPlayerPlacedBlock(brokenBlock))) {
-        if (JobUtils.getJob(player).equals("Miner")) {
                 if (JobUtils.getMinerBlocks().containsKey(brokenBlock.getType())) {
                     int economyAmount = JobUtils.getMinerBlocks().get(brokenBlock.getType());
                     DataBase.addEconomy(player, economyAmount);
                 }
-            } else if (JobUtils.getJob(player).equals("Gräber")) {
             if (JobUtils.getGraeberBlocks().containsKey(brokenBlock.getType())) {
                 int economyAmount = JobUtils.getGraeberBlocks().get(brokenBlock.getType());
                 DataBase.addEconomy(player, economyAmount);
             }
-        } else if (JobUtils.getJob(player).equals("Holzfäller")) {
             if (JobUtils.getHolzfaellerBlocks().containsKey(brokenBlock.getType())) {
                 int economyAmount = JobUtils.getHolzfaellerBlocks().get(brokenBlock.getType());
                 DataBase.addEconomy(player, economyAmount);
             }
         }
         }
-    }
 
 
     private boolean isPlayerPlacedBlock(Block block) {

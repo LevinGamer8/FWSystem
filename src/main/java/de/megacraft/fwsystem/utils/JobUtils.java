@@ -7,7 +7,6 @@ import java.util.*;
 
 public class JobUtils {
 
-    public static Map<UUID, String> playerJobs = new HashMap<>();
 
     public static Map<Material, Integer> minerBlocks;
     public static Map<Material, Integer> graeberBlocks;
@@ -21,24 +20,6 @@ public class JobUtils {
     }
 
 
-
-
-    public static void setJob(String job, Player p) {
-        playerJobs.put(p.getUniqueId(), job);
-    }
-
-    public static String getJob(Player p) {
-        UUID uuid = p.getUniqueId();
-        if (hasJob(p)) {
-            return playerJobs.get(uuid);
-        }
-        return null;
-    }
-
-    public static boolean hasJob(Player p) {
-        UUID uuid = p.getUniqueId();
-        return playerJobs.containsKey(uuid);
-    }
 
     private static void addMinerBlocks() {
         minerBlocks = new HashMap<>();
@@ -64,6 +45,10 @@ public class JobUtils {
         minerBlocks.put(Material.DEEPSLATE_DIAMOND_ORE, 30);
         minerBlocks.put(Material.DEEPSLATE_EMERALD_ORE, 36);
         minerBlocks.put(Material.DEEPSLATE_COAL_ORE, 40);
+        minerBlocks.put(Material.NETHERRACK, 1);
+        minerBlocks.put(Material.NETHER_GOLD_ORE, 5);
+        minerBlocks.put(Material.NETHER_QUARTZ_ORE, 5);
+        minerBlocks.put(Material.END_STONE, 1);
     }
 
     private static void addGraeberBlocks() {
@@ -85,7 +70,6 @@ public class JobUtils {
         holzfaellerBlocks.put(Material.STRIPPED_BIRCH_LOG, 1);
         holzfaellerBlocks.put(Material.DARK_OAK_LOG, 2);
         holzfaellerBlocks.put(Material.STRIPPED_DARK_OAK_LOG, 2);
-        holzfaellerBlocks.put(Material.DARK_OAK_LOG, 2);
         holzfaellerBlocks.put(Material.OAK_LOG, 1);
         holzfaellerBlocks.put(Material.STRIPPED_OAK_LOG, 1);
         holzfaellerBlocks.put(Material.SPRUCE_LOG, 1);

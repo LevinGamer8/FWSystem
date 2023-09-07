@@ -1,11 +1,9 @@
 package de.megacraft.fwsystem;
 
 import com.google.common.io.ByteArrayDataInput;
-import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import de.megacraft.fwsystem.commands.CB;
 import de.megacraft.fwsystem.commands.job;
-import de.megacraft.fwsystem.listeners.JoinListener;
 import de.megacraft.fwsystem.listeners.jobGUI;
 import de.megacraft.fwsystem.listeners.jobListener;
 import de.megacraft.fwsystem.utils.JobUtils;
@@ -33,7 +31,6 @@ public final class FWSystem extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new jobGUI(), this);
         Bukkit.getPluginManager().registerEvents(new jobListener(this), this);
-        Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
         JobUtils.init();
     }
 
