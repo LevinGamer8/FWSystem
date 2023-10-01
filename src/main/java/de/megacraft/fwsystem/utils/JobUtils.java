@@ -23,8 +23,8 @@ public class JobUtils {
 
     private static void addMinerBlocks() {
         minerBlocks = new HashMap<>();
-        minerBlocks.put(Material.STONE, (int) 0.1);
-        minerBlocks.put(Material.ANDESITE, (int) 0.2);
+        minerBlocks.put(Material.STONE, Integer.parseInt("0.1"));
+        minerBlocks.put(Material.ANDESITE, Integer.parseInt("0.2"));
         minerBlocks.put(Material.GRANITE, (int) 0.2);
         minerBlocks.put(Material.DIORITE, (int) 0.2);
         minerBlocks.put(Material.DEEPSLATE, (int) 0.2);
