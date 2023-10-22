@@ -1,7 +1,7 @@
 package de.megacraft.fwsystem.listeners;
 
 import de.megacraft.fwsystem.utils.JobUtils;
-import de.megaessentialsrecode.utils.DataBase;
+import de.megaessentialsrecode.utils.PlayerData;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,19 +27,20 @@ public class jobListener implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
         Player player = event.getPlayer();
+        PlayerData pd = new PlayerData(player.getName());
         Block brokenBlock = event.getBlock();
         if (!(isPlayerPlacedBlock(brokenBlock))) {
                 if (JobUtils.getMinerBlocks().containsKey(brokenBlock.getType())) {
-                    int economyAmount = JobUtils.getMinerBlocks().get(brokenBlock.getType());
-                    DataBase.addEconomy(player, economyAmount);
+                    Double economyAmount = JobUtils.getMinerBlocks().get(brokenBlock.getType());
+                    pd.addEconomy(economyAmount);
                 }
             if (JobUtils.getGraeberBlocks().containsKey(brokenBlock.getType())) {
-                int economyAmount = JobUtils.getGraeberBlocks().get(brokenBlock.getType());
-                DataBase.addEconomy(player, economyAmount);
+                Double economyAmount = JobUtils.getGraeberBlocks().get(brokenBlock.getType());
+                pd.addEconomy(economyAmount);
             }
             if (JobUtils.getHolzfaellerBlocks().containsKey(brokenBlock.getType())) {
-                int economyAmount = JobUtils.getHolzfaellerBlocks().get(brokenBlock.getType());
-                DataBase.addEconomy(player, economyAmount);
+                Double economyAmount = JobUtils.getHolzfaellerBlocks().get(brokenBlock.getType());
+                pd.addEconomy(economyAmount);
             }
         }
         }
